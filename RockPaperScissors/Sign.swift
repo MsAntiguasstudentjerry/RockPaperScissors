@@ -76,7 +76,7 @@ enum GameState {
     case Lose
     case Draw
     
-
+    walkdjlkawej.awdjk;law
     
     
 }
