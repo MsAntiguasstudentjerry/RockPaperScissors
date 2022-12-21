@@ -18,7 +18,7 @@ enum Sign {
         case .rock:
             return "🪨"
         case .paper:
-            return "👊🏻"
+            return "📖"
         case .scissors:
             return "✌🏼"
             
@@ -81,16 +81,21 @@ enum GameState {
 }
 
 
-func randomSign() -> Sign { let sign = Int.random(in: 0...2)
+func randomSign() -> Sign {
+    let sign = Int.random(in: 0...2)
     if sign == 0 {
         return .rock
     
     }
     else if sign == 1 {
-        return .paper }
-    else {
-        return .scissors }
-
+        return .paper
+        
     }
+    else {
+        return .scissors
+        
+    }
+
+}
 
 

@@ -20,38 +20,47 @@ class ViewController: UIViewController {
     
     
     @IBAction func rock1(_ sender: Any) {
-        
+        play(niketech: .rock)
     }
     
     @IBAction func paper1(_ sender: Any) {
+        play(niketech: .paper)
     }
     
     
+    
     @IBAction func scissors1(_ sender: Any) {
+        play(niketech: .scissors)
     }
     
     
     @IBAction func playagain123(_ sender: Any) {
+        updateUI(anything: .Start)
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        updateUI(anything: .Start)
     
     }
     
     
     func updateUI(anything: GameState){
         if anything == .Start{
+            
+            
+            
             tiguaemojicomputer.text = "🤖"
             tiguagamestatus.text = "Make a move"
             tiguaplayagain.isHidden = true
-            rock1.isEnabled = true
+            rock.isEnabled = true
             
-            paper1.isEnabled = true
+            paper.isEnabled = true
             
-            scissors1.isEnabled = true
+            scissors.isEnabled = true
             
             view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             
@@ -94,8 +103,30 @@ class ViewController: UIViewController {
         
            
     }
+    
+    func play(niketech: Sign){
+        let randy = randomSign()
+        
+        let jordanfive = niketech.checkWin(opponent: randy)
+        
+        tiguaemojicomputer.text = randy.emoji
+        
+        rock.isEnabled = false
+        paper.isEnabled = false
+        scissors.isEnabled = false
+        
+        tiguaplayagain.isHidden = true
+        
+        updateUI(anything: jordanfive)
+        
+        
+        
+        
+        
+    }
 
-
+    
+    
 }
 
 
